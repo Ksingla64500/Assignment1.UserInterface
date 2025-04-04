@@ -1,0 +1,168 @@
+/* Root container styling for centered content */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 3rem;
+  text-align: center;
+  background-color: #1e1e2f; /* Deep dark purple */
+  border-radius: 20px; /* More rounded corners */
+  box-shadow: 0 6px 40px rgba(0, 0, 0, 0.15); /* Deeper shadow effect */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Global font update */
+:root {
+  font-family: 'Roboto', sans-serif; /* Sleek, modern font */
+  line-height: 1.7;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.9); /* Slightly more vibrant text color */
+  background-color: #1e1e2f;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Logo Styling */
+.logo {
+  height: 7em;
+  padding: 1.5em;
+  will-change: filter, transform;
+  transition: filter 300ms, transform 0.3s ease, opacity 0.3s ease;
+  display: inline-block;
+  transform-origin: center;
+}
+
+/* Hover effect for logo with drop shadow and zoom */
+.logo:hover {
+  filter: drop-shadow(0 0 3em #ff4081); /* Vibrant pink glow */
+  transform: scale(1.1) rotate(8deg); /* More dynamic rotation */
+  opacity: 0.95;
+}
+
+/* React logo hover effect */
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafb);
+  transform: scale(1.1) rotate(8deg);
+}
+
+/* Spin animation for the second logo */
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Apply spin animation if reduced motion preference is not set */
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+/* Card styling for content boxes */
+.card {
+  padding: 2.5em;
+  background-color: #2b2b3d; /* Dark, muted blue */
+  border-radius: 18px; /* Softer curve */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3); /* Deeper shadow for more depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  margin: 2.5rem 0;
+  color: #e0e0e0; /* Softer white text */
+  position: relative;
+}
+
+/* Hover effect for cards */
+.card:hover {
+  transform: translateY(-12px); /* Slightly stronger lift */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  background-color: #34344b; /* Darker blue-grey for hover */
+}
+
+/* Card title hover effect */
+.card h2:hover {
+  color: #ff4081; /* Vibrant pink */
+  transform: scale(1.07);
+}
+
+/* Styling for 'Read the Docs' link */
+.read-the-docs {
+  color: #bbb;
+  font-size: 1.2rem;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.read-the-docs:hover {
+  color: #ff4081; /* Teal accent on hover */
+  text-decoration: underline;
+  transform: translateY(-2px);
+}
+
+/* Light Mode Override */
+@media (prefers-color-scheme: light) {
+  #root {
+    background-color: #ffffff;
+    color: #333;
+    box-shadow: 0 6px 40px rgba(0, 0, 0, 0.1);
+  }
+
+  .logo:hover {
+    filter: drop-shadow(0 0 3em #ff4081);
+  }
+
+  .logo.react:hover {
+    filter: drop-shadow(0 0 2em #61dafb);
+  }
+
+  .card {
+    background-color: #f4f4f9; /* Lighter background for card */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Lighter shadow */
+  }
+
+  .read-the-docs {
+    color: #444;
+  }
+
+  .card h2 {
+    color: #333;
+  }
+
+  .card h2:hover {
+    color: #ff4081; /* Accent color in light mode */
+  }
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  /* For logo */
+  .logo {
+    height: 6em;
+    padding: 1.2em;
+  }
+
+  /* For card */
+  .card {
+    padding: 2em;
+  }
+
+  /* For heading */
+  h1 {
+    font-size: 2.6em;
+  }
+
+  /* For links */
+  .read-the-docs {
+    font-size: 1.1rem;
+  }
+
+  /* For body padding */
+  body {
+    padding: 2.5rem;
+  }
+}
